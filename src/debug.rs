@@ -1,14 +1,14 @@
-use super::{GameStatePair};
-use asr::{print_limited, print_message};
-use numtoa::NumToA;
+use super::GameStatePair;
 use arrayvec::ArrayString;
+use asr::print_message;
+use numtoa::NumToA;
 
 const MAX_STRING_SIZE: usize = 4096;
 
 pub fn print_game_state(vars: &GameStatePair) {
     let mut num_buffer = [0u8; 20];
     let mut final_string: ArrayString<MAX_STRING_SIZE> = ArrayString::new();
-    
+
     macro_rules! push_if_changed_num {
         ($var:ident) => {
             if vars.$var.changed() {
@@ -27,7 +27,7 @@ pub fn print_game_state(vars: &GameStatePair) {
                 final_string.push_str(": ");
                 final_string.push_str(match vars.$var.current {
                     true => "true",
-                    false => "false"
+                    false => "false",
                 });
                 final_string.push('\n');
             }
@@ -43,7 +43,7 @@ pub fn print_game_state(vars: &GameStatePair) {
         };
     }
 
-    macro_rules! push_num {
+    macro_rules! _push_num {
         ($var:ident) => {
             final_string.push_str(stringify!($var));
             final_string.push_str(": ");
@@ -52,19 +52,19 @@ pub fn print_game_state(vars: &GameStatePair) {
         };
     }
 
-    macro_rules! push_bool {
+    macro_rules! _push_bool {
         ($var:ident) => {
             final_string.push_str(stringify!($var));
             final_string.push_str(": ");
             final_string.push_str(match vars.$var.current {
                 true => "true",
-                false => "false"
+                false => "false",
             });
             final_string.push('\n');
         };
     }
 
-    macro_rules! push {
+    macro_rules! _push {
         ($var:ident) => {
             final_string.push_str(stringify!($var));
             final_string.push('\n');
@@ -73,7 +73,7 @@ pub fn print_game_state(vars: &GameStatePair) {
 
     //push_if_changed_num!(global_frame_count);
     //push_if_changed_num!(output_frame_count);
-    
+
     push_if_changed_bool!(in_cutscene);
     push_if_changed_num!(game_status);
     push_if_changed_num!(game_mode);
@@ -92,15 +92,15 @@ pub fn print_game_state(vars: &GameStatePair) {
     push_if_changed_num!(rm_flag);
     push_if_changed_num!(mk2_value);
     push_if_changed_num!(walker_value);
-    
+
     push_if_changed_num!(angel_cutscene);
     push_if_changed_num!(selected_character);
     push_if_changed_num!(music);
     push_if_changed_num!(lw_flag);
-    
+
     push_if_changed!(emblem_bytes);
     push_if_changed!(event_bytes);
-    
+
     push_if_changed_num!(light_shoes);
     push_if_changed_num!(crystal_ring);
     push_if_changed_num!(ancient_light);
@@ -118,7 +118,7 @@ pub fn print_game_state(vars: &GameStatePair) {
     push_if_changed_num!(lure_mr);
     push_if_changed_num!(jet_booster);
     push_if_changed_num!(laser_blaster);
-    
+
     if !final_string.is_empty() {
         print_message(final_string.trim_end());
     }

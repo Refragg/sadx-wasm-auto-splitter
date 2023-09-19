@@ -1,19 +1,17 @@
 #![no_std]
 
+mod auto_splitter;
 mod auto_splitter_settings;
 mod auto_splitter_structs;
-mod auto_splitter;
-pub mod state;
 mod debug;
+pub mod state;
 
 use crate::auto_splitter::*;
 use crate::state::*;
 use asr::future::retry;
-use asr::{
-    future::next_tick, print_limited, Process,
-};
+use asr::{future::next_tick, print_limited, Process};
 
-use crate::debug::print_game_state;
+//use crate::debug::*;
 
 asr::async_main!(stable);
 asr::panic_handler!();
@@ -154,9 +152,9 @@ async fn main() {
                         shovel_claw, fighting_gloves, warrior_feather, long_hammer, life_belt,
                         power_rod, lure_ec, lure_ic, lure_ss, lure_mr, jet_booster, laser_blaster,
                     };
-                    
+
                     auto_splitter_loop(&vars, &mut custom_vars, &settings);
-                    print_game_state(&vars);
+                    //print_game_state(&vars);
 
                     next_tick().await;
                 }
