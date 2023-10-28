@@ -1,6 +1,6 @@
-use asr::user_settings::Settings;
+use asr::settings::Gui;
 
-#[derive(Settings)]
+#[derive(Gui)]
 pub struct Settings {
     /// Auto Reset on Main Menu
     #[default = false]

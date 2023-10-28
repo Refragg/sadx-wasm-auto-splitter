@@ -10,6 +10,7 @@ use crate::auto_splitter::*;
 use crate::state::*;
 use asr::future::retry;
 use asr::{future::next_tick, print_limited, Process};
+use asr::settings::Gui;
 
 //use crate::debug::*;
 
@@ -17,7 +18,7 @@ asr::async_main!(stable);
 asr::panic_handler!();
 
 async fn main() {
-    let settings = auto_splitter_settings::Settings::register();
+    let mut settings = auto_splitter_settings::Settings::register();
 
     let mut custom_vars = auto_splitter_startup();
 
@@ -36,6 +37,8 @@ async fn main() {
                 let mut game_state = GameState::default();
 
                 loop {
+                    settings.update();
+                    
                     macro_rules! unwrap_or_next_tick_opt {
                         ( $e:expr, $s:expr ) => {
                             match $e {
