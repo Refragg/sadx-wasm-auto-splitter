@@ -1,4 +1,5 @@
 use asr::settings::Gui;
+use asr::settings::gui::Title;
 
 #[derive(Gui)]
 pub struct Settings {
@@ -15,11 +16,8 @@ pub struct Settings {
     #[default = false]
     pub char_start_ban_trial: bool,
 
-    ///// Stages NOT To Split
-    //_stages: Title,
-    /// --- Stages NOT To Split ---
-    #[default = true]
-    _stages: bool,
+    /// Stages NOT To Split
+    _stages: Title,
 
     /// Sky Chase Act 1
     #[default = true]
@@ -28,11 +26,8 @@ pub struct Settings {
     #[default = true]
     pub stage_37: bool,
 
-    ///// Final Boss To Split
-    //_bosses: Title,
-    /// --- Final Boss To Split ---
-    #[default = true]
-    _bosses: bool,
+    /// Final Boss To Split
+    _bosses: Title,
 
     /// Egg Viper
     #[default = true]
@@ -53,11 +48,8 @@ pub struct Settings {
     #[default = true]
     pub boss_19: bool,
 
-    ///// Sonic Bosses
-    //_sonic_boss: Title,
-    /// --- Sonic Bosses ---
-    #[default = true]
-    _sonic_boss: bool,
+    /// Sonic Bosses
+    _sonic_boss: Title,
 
     /// Chaos 0
     #[default = true]
@@ -78,11 +70,8 @@ pub struct Settings {
     #[default = true]
     pub six_sonic: bool,
 
-    ///// Tails Bosses
-    //_tails_boss: Title,
-    /// --- Tails Bosses ---
-    #[default = true]
-    _tails_boss: bool,
+    /// Tails Bosses
+    _tails_boss: Title,
 
     /// Egg Hornet
     #[default = true]
@@ -97,11 +86,8 @@ pub struct Settings {
     #[default = true]
     pub gamma_tails: bool,
 
-    ///// Knuckles Bosses
-    //_knuckles_boss: Title,
-    /// --- Knuckles Bosses ---
-    #[default = true]
-    _knuckles_boss: bool,
+    /// Knuckles Bosses
+    _knuckles_boss: Title,
 
     /// Chaos 2
     #[default = true]
@@ -113,11 +99,8 @@ pub struct Settings {
     #[default = true]
     pub four_knuckles: bool,
 
-    ///// Gamma Bosses
-    //_gamma_boss: Title,
-    /// --- Gamma Bosses ---
-    #[default = true]
-    _gamma_boss: bool,
+    /// Gamma Bosses
+    _gamma_boss: Title,
 
     /// E101 BETA
     #[default = false]
@@ -126,21 +109,15 @@ pub struct Settings {
     #[default = true]
     pub sonic_gamma: bool,
 
-    ///// Miscellaneous
-    //_global_misc: Title,
-    /// --- Miscellaneous ---
-    #[default = true]
-    _global_misc: bool,
+    /// Miscellaneous
+    _global_misc: Title,
 
     /// Split between the Acts (might not work for characters other than sonic)
     #[default = false]
     pub act_split: bool,
 
-    ///// Sonic Miscellaneous
-    //_sonic_misc: Title,
-    /// --- Sonic Miscellaneous ---
-    #[default = true]
-    _sonic_misc: bool,
+    /// Sonic Miscellaneous
+    _sonic_misc: Title,
 
     /// Enter Sewers
     #[default = false]
@@ -161,11 +138,8 @@ pub struct Settings {
     #[default = false]
     pub enter_mr: bool,
 
-    ///// Knuckles Miscellaneous
-    //_knuckles_misc: Title,
-    /// --- Knuckles Miscellaneous ---
-    #[default = true]
-    _knuckles_misc: bool,
+    /// Knuckles Miscellaneous
+    _knuckles_misc: Title,
 
     /// Death Warp Mystic Ruin
     #[default = false]
@@ -174,11 +148,8 @@ pub struct Settings {
     #[default = false]
     pub enter_egg_carrier_knuckles: bool,
 
-    ///// Amy Miscellaneous
-    //_amy_misc: Title,
-    /// --- Amy Miscellaneous ---
-    #[default = true]
-    _amy_misc: bool,
+    /// Amy Miscellaneous
+    _amy_misc: Title,
 
     /// Enter Casino Area
     #[default = false]
@@ -193,11 +164,8 @@ pub struct Settings {
     #[default = false]
     pub enter_egg_carrier_amy: bool,
 
-    ///// Gamma Miscellaneous
-    //_gamma_misc: Title,
-    /// --- Gamma Miscellaneous ---
-    #[default = true]
-    _gamma_misc: bool,
+    /// Gamma Miscellaneous
+    _gamma_misc: Title,
 
     /// Death Mystic Ruin (Windy Valley Flag)
     #[default = false]
@@ -209,11 +177,8 @@ pub struct Settings {
     #[default = false]
     pub egg_carrier_mk2_gamma: bool,
 
-    ///// Super Sonic Miscellaneous
-    //_super_sonic_misc: Title,
-    /// --- Super Sonic Miscellaneous ---
-    #[default = true]
-    _super_sonic_misc: bool,
+    /// Super Sonic Miscellaneous
+    _super_sonic_misc: Title,
 
     /// Enter Cave
     #[default = false]
@@ -231,11 +196,8 @@ pub struct Settings {
     #[default = false]
     pub jungle_super_sonic: bool,
 
-    ///// Enter Boss
-    //_boss_enter: Title,
-    /// --- Enter Boss ---
-    #[default = true]
-    _boss_enter: bool,
+    /// Enter Boss
+    _boss_enter: Title,
 
     /// Enter Egg Hornet
     #[default = false]
@@ -256,11 +218,8 @@ pub struct Settings {
     #[default = false]
     pub enter_beta_2: bool,
 
-    ///// Enter Stage
-    //_stage_enter: Title,
-    /// --- Enter Stage ---
-    #[default = true]
-    _stage_enter: bool,
+    /// Enter Stage
+    _stage_enter: Title,
 
     /// Enter Emerald Coast
     #[default = false]
@@ -296,11 +255,8 @@ pub struct Settings {
     #[default = false]
     pub enter_hs: bool,
 
-    ///// Upgrades
-    //_upgrades: Title,
-    /// --- Upgrades ---
-    #[default = true]
-    _upgrades: bool,
+    /// Upgrades
+    _upgrades: Title,
 
     /// Light Speed Shoes
     #[default = false]

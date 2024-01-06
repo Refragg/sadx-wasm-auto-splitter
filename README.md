@@ -1,6 +1,6 @@
 # sadx-auto-splitter
 
-An auto splitter for Sonic.
+A port of the original ASL auto splitter for Sonic Adventure DX.
 
 ## Compilation
 

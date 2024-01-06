@@ -24,7 +24,7 @@ async fn main() {
 
     loop {
         let process = retry(|| {
-            ["sonic.exe", "Sonic Adventure DX.exe", "wine", "wine64"]
+            ["sonic.exe", "Sonic Adventure DX.exe"]
                 .into_iter()
                 .find_map(Process::attach)
         })
