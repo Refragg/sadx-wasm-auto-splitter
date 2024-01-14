@@ -2,6 +2,19 @@
 
 A port of the original ASL auto splitter for Sonic Adventure DX.
 
+## Credits
+
+This auto splitter reuses code from a previous codebase.
+All of the original contributors to the auto splitter have agreed for this project to take on some of their code.
+
+**The original contributors:**
+
+[TurtleMan64](https://github.com/TurtleMan64/)  
+[Ngolinvaux](https://github.com/Ngolinvaux)  
+[IDGeek121](https://github.com/IDGeek121)  
+[Sora](https://github.com/Sora-yx)  
+[skoobmaster](https://github.com/skewbmaster/)
+
 ## Compilation
 
 This auto splitter is written in Rust. In order to compile it, you need to
